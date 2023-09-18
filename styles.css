@@ -4,71 +4,216 @@ body{
     margin: 0;
 }
 .container {
-    
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: 110px 1fr;
-    
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 130px auto; /* Change the second row to 'auto' or a fixed height */
 }
-.navbar{
-    background-color: aqua;
+
+.navbar {
+    background-color: rgb(255, 255, 255);
     grid-column-start: 2;
     grid-column-end: 2;
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 60px auto; /* Change the second row to 'auto' or a fixed height */
 }
+
 .sidebar{
     display: grid;
-    background-color: bisque;
+    background-color: #ffcb8d;
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 3;
-    grid-template-rows: 80px 1fr;
+    grid-template-rows: auto auto 1fr;
 }
-.content{
-    background-color: burlywood;
+.announcement{
     display: grid;
+    grid-template-rows: repeat(2, 1fr);   
+    gap: 10px;
+}
+.announcement-card{
+    background-color: #f6f7f9;
     border-radius: 10px;
-    grid-template-columns: 1fr 1fr 0.9fr;
-    grid-template-rows: 1fr 1fr 0.9fr;
+    
+}
+.a-text{
+    display: flex;
+    justify-content: center;
+    border-bottom: dashed black;
+    padding-bottom: 5px ;
+}
+.a-content{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+.trending {
+    justify-content: center;
+    border-bottom: dashed black;
+    padding-bottom: 5px ;
+}
+
+
+
+.content{
+    background-color: rgb(104, 104, 104);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
     gap: 20px;
-    padding: 25px;
-    grid-template-areas: 
-    "c1 c2 c3"
-    "c4 c5 c3"
-    "c7 c8 c3"
-    ;
+    padding: 25px;   
+
+}
+.project {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: auto 1fr 1fr;
+    gap: 20px;
+    
 }
 .card {
     background-color: #f6f7f9;
     border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    grid-template-rows: 3fr 1fr;
 }
-.card:nth-child(1) {
-    grid-area: c1;
+.color{
+    background-color: #ffcb8d;
+    border-radius: 10px 0 0 10px;
+    grid-row-start: 1;
+    grid-row-end: 3;
 }
-.card:nth-child(2) {
-    grid-area: c2;
+.text{
+    padding-left: 10px;
 }
-.card:nth-child(3) {
-    grid-area: c3;
+.action {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
 
 }
-.card:nth-child(4) {
-    grid-area: c4;
+.action-btns{
+    height: 35px;
+    padding-right: 25px;
+    cursor: pointer;
+
 }
-.card:nth-child(5) {
-    grid-area: c5;
+
+ul {
+    list-style: none;
+    padding: 0;
+    position: relative;  
 }
-.card:nth-child(6) {
-    grid-area: c6;
+span{
+    color: black;
 }
-ul > li {
-    list-style-type: none;
+ul li {
+    padding: 1rem;
+    margin: 8px 0;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out ;
+    
+}
+ul li:hover{
+    background-color: rgb(119, 111, 111);
+    color: whitesmoke;
+}
+span:hover{
+    color: whitesmoke;
+}
+ul a{
+    display:flex ;
+    gap:20px;
+    text-decoration: none;
+    align-items: center;
+    gap: 10px;
+    
+
+}
+a:visited{
+    color: whitesmoke;
+}
+p {
+    display: flex;
+    align-items: center;
+    
     font-size: 20px;
-    display: grid;
-    gap: 20px;
+    margin-top: 30px;
 }
+li a span {
+    overflow: hidden;
+    font-size: 1.2rem;
+}
+p>img {
+    margin-left: 7px;
+    padding-right: 20px;
+}
+.search-box{
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+button>img{
+    height: 10px;
+    padding-right: 5px;
+}
+input {
+    width: 400px;
+    border-radius: 20px;
+    outline: none;
+    background-color: #dfdfdf;
+    height: 20px;   
+}
+.profile {
+    display: flex;
+}
+.icon{
+    display: flex;
+    padding-right: 20px;
+}
+.profile>.icon{
+    padding-top: 10px;
+}
+.profile>p {
+    font-size: 30px ;
+}
+.greet{
+    display: flex;
+    padding-left: 30px;
+    align-items: center;
+    gap: 10px;
+}
+.greet>p {
+    font-size: 25px;
+}
+.btns{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    gap: 10px; 
+
+}
+button {
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: #ffcb8d;
+    outline: none;
+    border: none;
+    transition: all 0.5s ease-in-out
+}
+button:hover{
+    background-color: rgb(119, 111, 111);
+    color: whitesmoke;
+}
+.greet>p>a{
+    color: black;
+}
+.greet>p>a:hover{
+    color: #ffcb8d
+}
+
